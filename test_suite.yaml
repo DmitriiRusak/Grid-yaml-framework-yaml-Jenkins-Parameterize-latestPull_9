@@ -1,0 +1,18 @@
+version: "3"
+services:
+    vendorPortal:
+        image: dimbas/frame_work
+        environment:
+        - BROWSER=${BROWSER}
+        - HUB_HOST=${HUB_HOST}
+        - TEST_SUITE=vendorPortal.xml
+        volumes:
+        - ./output/vendorPortal:/home/docker-resources/test-output
+    flight-reservation:
+        image: dimbas/frame_work
+        environment:
+        - BROWSER=${BROWSER}
+        - HUB_HOST=${HUB_HOST}
+        - TEST_SUITE=flight-reservation.xml
+        volumes:
+        - ./output/flight-reservation:/home/docker-resources/test-output
